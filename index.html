@@ -1,149 +1,336 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VSL - Cripto Milionário</title>
+    <title>SBE</title>
+    <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .vsl-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .vsl-header h1 {
-            font-size: 2.5em;
-            color: #2C3E50;
-            margin-bottom: 10px;
-        }
-        .vsl-header p {
-            font-size: 1.2em;
-            color: #7F8C8D;
-        }
-        .vsl-video {
-            margin: 30px 0;
-        }
-        video {
-            width: 100%;
-            height: auto;
-        }
-        .vsl-call-to-action {
-            background-color: #1ABC9C;
-            padding: 30px;
-            color: white;
-            text-align: center;
-        }
-        .vsl-call-to-action h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        .vsl-call-to-action p {
-            font-size: 1.2em;
-        }
-        #cta-button {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            background-color: #E74C3C;
-            border: none;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        #cta-button:hover {
-            background-color: #C0392B;
-        }
-        .vsl-footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #BDC3C7;
-            font-size: 0.9em;
-        }
-        #offer-details {
-            margin-top: 20px;
-            background-color: #F39C12;
-            padding: 20px;
-            color: white;
-            border-radius: 8px;
-            text-align: center;
-        }
-        #offer-details ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        #offer-details ul li {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .price-info {
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
-        .price-regular {
-            text-decoration: line-through;
-            color: #BDC3C7;
-        }
-        .price-discount {
-            color: #E74C3C;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        .hidden {
-            display: none;
-        }
+ /* Reset básico para melhor compatibilidade */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(90deg, #006400, #2E8B57);
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botão Personalizado */
+.btn-primary-custom {
+    background-color: #FFA500;
+    color: #fff;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary-custom:hover {
+    background-color: #FF4500;
+    transform: scale(1.05);
+}
+
+/* Seção de Recursos (Features) */
+.features i {
+    font-size: 2.5rem;
+    color: #006400;
+}
+
+.feature-box {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Depoimentos (Testimonials) */
+.testimonials {
+    background: #f9f9f9;
+    padding: 4rem 1rem;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 1rem auto;
+    max-width: 90%;
+    text-align: center;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #FFA500;
+}
+
+/* Seção de Preço (Price Section) */
+.price-section {
+    background: linear-gradient(90deg, #FFA500, #FF4500);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.price-discount {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 1rem 0;
+}
+
+.price-regular {
+    text-decoration: line-through;
+    color: #eee;
+    font-size: 1.2rem;
+}
+
+/* Garantia */
+.guarantee-box {
+    background: #e0ffe0;
+    padding: 2rem;
+    border: 2px dashed #2E8B57;
+    text-align: center;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 600px;
+    transition: transform 0.3s ease;
+}
+
+.guarantee-box:hover {
+    transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsividade Avançada */
+@media (max-width: 992px) {
+    .feature-box, .testimonial-card {
+        margin: 1rem 0;
+    }
+
+    .btn-primary-custom {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .price-section {
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h2, h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .testimonial-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn-primary-custom {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .feature-box, .testimonial-card {
+        padding: 1.2rem;
+    }
+
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .price-discount {
+        font-size: 1.8rem;
+    }
+
+    .guarantee-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .btn-primary-custom {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}
+
     </style>
 </head>
+
 <body>
-    <section class="vsl-container">
-        <header class="vsl-header">
-            <h1>Transforme Sua Vida Hoje</h1>
-            <p>Assista ao vídeo abaixo e descubra como alcançar seus objetivos com nosso método exclusivo!</p>
-        </header>
-        
-        <div class="vsl-video">
-            <video id="vsl-video" controls autoplay>
-                <source src="seu-video-2min.mp4" type="video/mp4">
-                Seu navegador não suporta o formato de vídeo.
-            </video>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h2 class="display-2">🚀 Scale Business Ecosystem-SBE</h2>
+            <p class="lead">O sistema gringo que está revolucionando o mercado digital no Brasil!</p>
+            <a href="#oferta" class="btn btn-primary-custom btn-lg">QUERO MUDAR MINHA VIDA AGORA</a>
         </div>
-        
-        <section class="vsl-call-to-action">
-            <h2>Não Perca Tempo! A Hora é Agora!</h2>
-            <p>Garanta sua vaga e aproveite a oferta exclusiva.</p>
-            <button id="cta-button">Quero Saber Mais</button>
-        </section>
-        
-        <section id="offer-details" class="hidden">
-            <ul>
-                <li>✔ Método comprovado para transformação rápida</li>
-                <li>✔ Acesso a materiais exclusivos</li>
-                <li>✔ Suporte contínuo para resultados rápidos</li>
-            </ul>
-            <p class="price-info">
-                <strong>De R$ 1.200,00 por apenas:</strong><br>
-                <span class="price-regular">R$ 1.200,00</span> <span class="price-discount">R$ 69,00 à vista</span><br>
-                Ou em até 5x de R$ 13,80
-            </p>
-        </section>
-        
-        <footer class="vsl-footer">
-            <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
-        </footer>
+    </header>
+<!-- Texto de Introdução -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Transforme Seu Futuro com o Scale Business Ecosystem!</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="Grafico.jpeg" alt="Imagem Inspiradora" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <p><strong>Imagine isso:</strong> Você está cansado de buscar uma forma de ganhar dinheiro online, tentando de tudo, mas nada parece funcionar. Os cursos são confusos, os métodos são genéricos e as promessas nunca se concretizam. O sonho de viver de renda digital começa a parecer distante, quase impossível.</p>
+            <p>Foi exatamente nessa situação que <strong>muitos empreendedores começaram</strong>. Mas, assim como eles, você está prestes a descobrir que existe um caminho diferente – uma forma de transformar suas ideias em um sistema lucrativo e escalável, mesmo que você esteja começando do zero.</p>
+            <p><strong>O Scale Business Ecosystem (SBE)</strong> é mais do que um método. É um sistema integrado que leva você passo a passo, mostrando como construir, escalar e dominar negócios digitais lucrativos. Ele reúne tudo que você precisa para sair da incerteza e conquistar resultados reais.</p>
+            <p>Assim como os heróis de grandes histórias, sua jornada começa agora. Deixe para trás os dias de frustração e dê o primeiro passo rumo à liberdade financeira e profissional.</p>
+            <div class="text-center mt-3">
+                <a href="#oferta" class="btn btn-primary-custom btn-lg">Descubra o Sistema</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Features Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Por Que o SBE é a Melhor Escolha?</h2>
+        <div class="row text-center">
+            <div class="col-md-3 feature-box">
+                <i class="bi bi-rocket"></i>
+                <h5 class="mt-3">Do Zero ao Sucesso</h5>
+                <p>Um método comprovado para construir negócios digitais lucrativos do absoluto zero.</p>
+            </div>
+            <div class="col-md-3 feature-box">
+                <i class="bi bi-tools"></i>
+                <h5 class="mt-3">Ferramentas Prontas</h5>
+                <p>Modelos, checklists e estratégias validadas para você aplicar hoje mesmo.</p>
+            </div>
+            <div class="col-md-3 feature-box">
+                <i class="bi bi-people"></i>
+                <h5 class="mt-3">Mentoria e Suporte</h5>
+                <p>Orientação direta com especialistas e uma comunidade de empreendedores de sucesso.</p>
+            </div>
+            <div class="col-md-3 feature-box">
+                <i class="bi bi-graph-up"></i>
+                <h5 class="mt-3">Resultados Escaláveis</h5>
+                <p>Maximize seus lucros com estratégias testadas para crescimento acelerado.</p>
+            </div>
+        </div>
     </section>
 
-    <script>
-        // Mostrar detalhes da oferta ao clicar no botão "Quero Saber Mais"
-        document.getElementById('cta-button').addEventListener('click', function() {
-            document.getElementById('offer-details').classList.toggle('hidden');
-        });
-    </script>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center mb-4">O Que Nossos Alunos Dizem</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 testimonial-card">
+                    <img src="cliente1.jpg" alt="Cliente 1" class="testimonial-image">
+                    <blockquote>
+                        <p>"O SBE mudou minha vida! Em menos de 30 dias, já estava gerando lucro real."</p>
+                        <footer>– João Silva, Empreendedor Digital</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 testimonial-card">
+                    <img src="cliente2.jpg" alt="Cliente 2" class="testimonial-image">
+                    <blockquote>
+                        <p>"Ferramentas incríveis e um suporte que realmente faz a diferença. Recomendo!"</p>
+                        <footer>– Maria Souza, Especialista em Marketing</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="price-section" id="oferta">
+        <div class="container">
+            <h3>O Que Você Vai Receber:</h3>
+            <ul class="list-unstyled">
+                <li>✅ Blueprints de Monetização Multinicho</li>
+                <li>✅ Kit de Ferramentas para Lançamento Rápido</li>
+                <li>✅ Masterclass com Estratégias Avançadas</li>
+                <li>✅ Acesso à Comunidade Exclusiva do SBE</li>
+            </ul>
+            <p><strong>De <span class="price-regular">R$ 345</span> por apenas:</strong></p>
+            <p class="price-discount">5x de R$ 9,40 ou R$ 47,00 à vista</p>
+            <a href="#" class="btn btn-primary-custom btn-lg">QUERO FAZER PARTE AGORA!</a>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-box">
+        <h2>🔒 Garantia Incondicional de 7 Dias</h2>
+        <p>Se você não estiver 100% satisfeito, devolvemos seu dinheiro sem perguntas. Simples assim!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: white; text-align: center; padding: 1rem;">
+        <p>© 2024 Scale Business Ecosystem. Todos os direitos reservados.</p>
+    </footer>
 </body>
+
 </html>
