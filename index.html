@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSL - Cripto Milionário</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .vsl-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .vsl-header h1 {
+            font-size: 2.5em;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+        .vsl-header p {
+            font-size: 1.2em;
+            color: #7F8C8D;
+        }
+        .vsl-video {
+            margin: 30px 0;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        .vsl-call-to-action {
+            background-color: #1ABC9C;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+        .vsl-call-to-action h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .vsl-call-to-action p {
+            font-size: 1.2em;
+        }
+        #cta-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #E74C3C;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #cta-button:hover {
+            background-color: #C0392B;
+        }
+        .vsl-footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #BDC3C7;
+            font-size: 0.9em;
+        }
+        #offer-details {
+            margin-top: 20px;
+            background-color: #F39C12;
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #offer-details ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        #offer-details ul li {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .price-info {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .price-regular {
+            text-decoration: line-through;
+            color: #BDC3C7;
+        }
+        .price-discount {
+            color: #E74C3C;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="vsl-container">
+        <header class="vsl-header">
+            <h1>Transforme Sua Vida Hoje</h1>
+            <p>Assista ao vídeo abaixo e descubra como alcançar seus objetivos com nosso método exclusivo!</p>
+        </header>
+        
+        <div class="vsl-video">
+            <video id="vsl-video" controls autoplay>
+                <source src="seu-video-2min.mp4" type="video/mp4">
+                Seu navegador não suporta o formato de vídeo.
+            </video>
+        </div>
+        
+        <section class="vsl-call-to-action">
+            <h2>Não Perca Tempo! A Hora é Agora!</h2>
+            <p>Garanta sua vaga e aproveite a oferta exclusiva.</p>
+            <button id="cta-button">Quero Saber Mais</button>
+        </section>
+        
+        <section id="offer-details" class="hidden">
+            <ul>
+                <li>✔ Método comprovado para transformação rápida</li>
+                <li>✔ Acesso a materiais exclusivos</li>
+                <li>✔ Suporte contínuo para resultados rápidos</li>
+            </ul>
+            <p class="price-info">
+                <strong>De R$ 1.200,00 por apenas:</strong><br>
+                <span class="price-regular">R$ 1.200,00</span> <span class="price-discount">R$ 69,00 à vista</span><br>
+                Ou em até 5x de R$ 13,80
+            </p>
+        </section>
+        
+        <footer class="vsl-footer">
+            <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+        </footer>
+    </section>
+
+    <script>
+        // Mostrar detalhes da oferta ao clicar no botão "Quero Saber Mais"
+        document.getElementById('cta-button').addEventListener('click', function() {
+            document.getElementById('offer-details').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
